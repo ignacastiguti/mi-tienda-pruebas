@@ -3,32 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda de Pruebas - Catálogo</title>
+    <title>⚡ Mi Tienda Tech - Pruebas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; line-height: 1.6; }
-        h1 { color: #333; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-        a { color: #0066cc; text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; }
+        :root {
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+        }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 { 
+            font-size: 2.5rem;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #718096;
+            font-size: 1.1rem;
+        }
+        /* Grid para colocar los productos en columnas bonitas */
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0;
+            list-style: none;
+        }
+        /* Estilo de cada tarjeta de producto */
+        .card-producto {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .card-producto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Iconos de los productos */
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background-color: #eeebff;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        .card-producto h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #1a202c;
+        }
+        /* Botón de ver detalles */
+        .btn-ver {
+            margin-top: auto;
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+            width: 80%;
+        }
+        .btn-ver:hover {
+            background-color: var(--primary-hover);
+        }
     </style>
 </head>
 <body>
 
-    <h1>Catálogo de Productos</h1>
-    <p>Selecciona un producto para ver sus detalles:</p>
+    <header>
+        <h1><i class="fa-solid fa-bolt" style="color: #eab308;"></i> GadgetZone</h1>
+        <p class="subtitle">Tu catálogo tecnológico de pruebas automatizadas</p>
+    </header>
     
-    <ul>
-        <li><a href="producto1.html">Portatil Asus Pro Test</a></li>
-        <li><a href="producto2.html">Smartphone Samsung Galaxy Mock</a></li>
-        <li><a href="producto3.html">Auriculares Sony Inalambricos Falsos</a></li>
-        <li><a href="producto4.html">Teclado Mecanico RGB Test</a></li>
-        <li><a href="producto5.html">Raton Gaming Optico Click</a></li>
-        <li><a href="producto6.html">Monitor 4K Studio 27 Pulgadas</a></li>
-        <li><a href="producto7.html">Altavoz Bluetooth Mini Boom</a></li>
-        <li><a href="producto8.html">Disco Duro Externo SSD 1TB</a></li>
-        <li><a href="producto9.html">Memoria USB C 64GB Flash</a></li>
-        <li><a href="producto10.html">Alfombrilla Raton XXL Black</a></li>
+    <ul class="grid-productos">
+        <li class="card-producto">
+            <div class="icon-wrapper"><i class="fa-solid fa-laptop"></i></div>
+            <h3>Portatil Asus Pro Test</h3>
+            <a href="producto1.html" class="btn-ver">Ver Producto <i class="fa-solid fa-arrow-right"></i></a>
+        </li>
+        <li class="card-producto">
+            <div class="icon-wrapper"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>Smartphone Samsung</h3>
+            <a href="producto2.html" class="btn-ver">Ver Producto <i class="fa-solid fa-arrow-right"></i></a>
+        </li>
+        <li class="card-producto">
+            <div class="icon-wrapper"><i class="fa-solid fa-headphones"></i></div>
+            <h3>Auriculares Sony</h3>
+            <a href="producto3.html" class="btn-ver">Ver Producto <i class="fa-solid fa-arrow-right"></i></a>
+        </li>
+        <li class="card-producto">
+            <div class="icon-wrapper"><i class="fa-solid fa-keyboard"></i></div>
+            <h3>Teclado Mecanico RGB</h3>
+            <a href="producto4.html" class="btn-ver">Ver Producto <i class="fa-solid fa-arrow-right"></i></a>
+        </li>
+        <li class="card-producto">
+            <div class="icon-wrapper"><i class="fa-solid fa-computer-mouse"></i></div>
+            <h3>Raton Gaming Optico</h3>
+            <a href="producto5.html" class="btn-ver">Ver Producto <i class="fa-solid fa-arrow-right"></i></a>
+        </li>
+        <li class="card-producto">
+            <div class="icon-wrapper"><i class="fa-solid fa-tv"></i></div>
+            <h3>Monitor 4K Studio 27"</h3>
+            <a href="producto6.html" class="btn-ver">Ver Producto <i class="fa-solid fa-arrow-right"></i></a>
+        </li>
+        <li class="card-producto">
+            <div class="icon-wrapper"><i class="fa-solid fa-volume-high"></i></div>
+            <h3>Altavoz Bluetooth Mini</h3>
+            <a href="producto7.html" class="btn-ver">Ver Producto <i class="fa-solid fa-arrow-right"></i></a>
+        </li>
+        <li class="card-producto">
+            <div class="icon-wrapper"><i class="fa-solid fa-hard-drive"></i></div>
+            <h3>Disco Duro SSD 1TB</h3>
+            <a href="producto8.html" class="btn-ver">Ver Producto <i class="fa-solid fa-arrow-right"></i></a>
+        </li>
+        <li class="card-producto">
+            <div class="icon-wrapper"><i class="fa-solid fa-sd-card"></i></div>
+            <h3>Memoria USB C 64GB</h3>
+            <a href="producto9.html" class="btn-ver">Ver Producto <i class="fa-solid fa-arrow-right"></i></a>
+        </li>
+        <li class="card-producto">
+            <div class="icon-wrapper"><i class="fa-solid fa-rug"></i></div>
+            <h3>Alfombrilla XXL Black</h3>
+            <a href="producto10.html" class="btn-ver">Ver Producto <i class="fa-solid fa-arrow-right"></i></a>
+        </li>
     </ul>
 
 </body>
